@@ -11,7 +11,40 @@
 <body>
     <canvas id="graffitiCanvas"></canvas>
 
-    <!-- Ensure the correct path to the script -->
-    <script src="src/script.js"></script>
+    <!-- ✅ Load Firebase from CDN -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script>
+
+    <!-- ✅ Load Firebase from CDN -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script>
+
+<script>
+    // ✅ Firebase Config (Visible to client)
+    const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_AUTH_DOMAIN",
+        databaseURL: "YOUR_DATABASE_URL",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_STORAGE_BUCKET",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_APP_ID"
+    };
+
+    // ✅ Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+    const drawingsRef = db.ref("drawings");
+
+    console.log("🔥 Firebase Initialized:", firebase);
+</script>
+
+<!-- ✅ Your script file -->
+<script src="script.js"></script>
+
+
+    <!-- ✅ Your script file (MUST be loaded AFTER Firebase) -->
+    <script src="script.js"></script>
+
 </body>
 </html>
